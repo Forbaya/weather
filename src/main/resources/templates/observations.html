@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Observations</title>
+    </head>
+    <body>
+        <h1>Havaintopisteet</h1>
+        <li th:each="observationPoint : ${observationPoints}">
+            <p th:text="${observationPoint.city}">Kaupunki</p>
+            <p th:text="${observationPoint.latitude}">Latitude</p>
+            <p th:text="${observationPoint.longitude}">Longitude</p>
+        </li>
+    </body>
+</html>
