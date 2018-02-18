@@ -9,13 +9,12 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import java.time.LocalDateTime;
 
-
 @Entity
 @AllArgsConstructor
 @Data
 @NoArgsConstructor
 public class Observation extends AbstractPersistable<Long> {
-    @Column(length= 10000)
+    @Column(length = 10000)
     private ObservationPoint observationPoint;
     private double temperature;
     private LocalDateTime dateTime;
