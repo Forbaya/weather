@@ -13,9 +13,9 @@ public class ObservationPointService {
     private ObservationPointRepository observationPointRepository;
 
     @Transactional
-    public void add(String city, double latitude, double longitude) {
+    public void add(String name, double latitude, double longitude) {
         ObservationPoint observationPoint = new ObservationPoint();
-        observationPoint.setCity(city);
+        observationPoint.setName(name);
         observationPoint.setLatitude(latitude);
         observationPoint.setLongitude(longitude);
 

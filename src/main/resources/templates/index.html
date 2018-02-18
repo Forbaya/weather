@@ -5,6 +5,11 @@
         <title>Index</title>
     </head>
     <body>
-
+        <h1>Havaintopisteet</h1>
+        <li th:each="observationPoint : ${observationPoints}">
+            <a th:href="@{/observationpoint/{id}(id=${observationPoint.id})}" th:text="${observationPoint.name}"></a>
+            <span th:text="${observationPoint.latitude}"></span>
+            <span th:text="${observationPoint.longitude}"></span>
+        </li>
     </body>
 </html>

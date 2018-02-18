@@ -13,5 +13,7 @@ public interface ObservationPointRepository  extends JpaRepository<ObservationPo
      * @param city name of the city
      * @return the observation point of the city
      */
-    ObservationPoint findByCity(String city);
+    ObservationPoint findByName(String city);
+
+    ObservationPoint findById(Long id);
 }

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Observation point</title>
+    </head>
+    <body>
+        <p th:text="${observationPoint.name}"></p>
+
+        <li th:each="observation : ${observationPoint.observations}">
+            <span th:text="${observation.dateTime}"></span>
+            <span th:text="${observation.temperature}"></span>
+        </li>
+
+        <form th:action="@{/observationpoint/{id}(id=${observationPoint.id})}" method="POST">
+            <span>Lämpötila</span><br/>
+            <input type="double" name="temperature"/>
+            <input type="submit" value="Lisää havainto"/>
+        </form>
+    </body>
+</html>
