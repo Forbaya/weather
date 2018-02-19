@@ -22,15 +22,15 @@ public class ObservationPointServiceTest {
 
     @Test
     public void add() {
-        List<ObservationPoint> observationPoints = observationPointRepository.findAll();
-        int count = observationPoints.size();
+        List<ObservationPoint> observationPointList = observationPointRepository.findAll();
+        int count = observationPointList.size();
         // There should be 5 initial observation points.
         assertEquals(5, count);
 
         observationPointService.add("Kumpula", 60.2042758, 24.961099699999977);
 
-        observationPoints = observationPointRepository.findAll();
-        count = observationPoints.size();
+        observationPointList = observationPointRepository.findAll();
+        count = observationPointList.size();
         assertEquals(6, count);
 
         ObservationPoint kumpula = observationPointRepository.findByName("Kumpula");

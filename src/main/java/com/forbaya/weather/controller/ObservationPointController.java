@@ -29,7 +29,7 @@ public class ObservationPointController {
     @PostConstruct
     private void initializeObservationPoints() {
         observationPointService.add("Tokio", 35.6584421,139.7328635);
-        observationPointService.add("Helsinki,", 60.1697530,24.9490830);
+        observationPointService.add("Helsinki", 60.1697530,24.9490830);
         observationPointService.add("New York", 40.7406905,-73.9938438);
         observationPointService.add("Amsterdam", 52.3650691,4.9040238);
         observationPointService.add("Dubai", 25.092535,55.1562243);

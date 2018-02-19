@@ -6,10 +6,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import java.util.List;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-
+import javax.persistence.*;
 
 @Entity
 @AllArgsConstructor
@@ -19,7 +16,6 @@ public class ObservationPoint extends AbstractPersistable<Long> {
     private String name;
     private double latitude;
     private double longitude;
-    @Column(length = 10000)
-    @ManyToMany
+    @OneToMany(fetch = FetchType.EAGER)
     List<Observation> observations;
 }
