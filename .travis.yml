@@ -1,0 +1,4 @@
+languge: java
+sudo: false
+
+script: mvn checkstyle:check
