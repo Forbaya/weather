@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Header template</title>
+    </head>
+    <body>
+        <header th:fragment="header">
+            <li th:each="observationPoint : ${observationPoints}">
+                <a th:href="@{/observationpoint/{id}(id=${observationPoint.id})}" th:text="${observationPoint.name}"></a>
+            </li>
+        </header>
+    </body>
+</html>

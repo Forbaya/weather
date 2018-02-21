@@ -5,6 +5,8 @@
         <title>Index</title>
     </head>
     <body>
+        <header th:replace="fragments/header :: header"/>
+
         <h1>Havaintopisteet</h1>
         <li th:each="observationPoint : ${observationPoints}">
             <a th:href="@{/observationpoint/{id}(id=${observationPoint.id})}" th:text="${observationPoint.name}"></a>

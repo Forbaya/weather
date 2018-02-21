@@ -5,7 +5,9 @@
         <title>Observation point</title>
     </head>
     <body>
-        <p th:text="${observationPoint.name}"></p>
+        <header th:replace="fragments/header :: header"/>
+
+        <h1 th:text="${observationPoint.name}"></h1>
 
         <li th:each="observation : ${observationPoint.observations}">
             <span th:text="${observation.dateTime}"></span>
