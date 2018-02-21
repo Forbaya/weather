@@ -3,12 +3,20 @@
     <head>
         <meta charset="UTF-8"/>
         <title>Header template</title>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}"/>
     </head>
     <body>
         <header th:fragment="header">
-            <li th:each="observationPoint : ${observationPoints}">
-                <a th:href="@{/observationpoint/{id}(id=${observationPoint.id})}" th:text="${observationPoint.name}"></a>
-            </li>
+            <nav class="navbar navbar-nav navbar-dark bg-dark">
+                <div class="container">
+                    <div vlass="navbar-header">
+                        <a class="navbar-brand" href="/index">Weather</a>
+                    </div>
+                    <li th:each="observationPoint : ${observationPoints}">
+                        <a th:href="@{/observationpoint/{id}(id=${observationPoint.id})}" th:text="${observationPoint.name}"></a>
+                    </li>
+                </div>
+            </nav>
         </header>
     </body>
 </html>
