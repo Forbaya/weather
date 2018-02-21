@@ -9,23 +9,26 @@
     <body>
         <header th:replace="fragments/header :: header"/>
 
-        <h1 id="observation-point-name" th:text="${observationPoint.name}"></h1>
-        <div id="observation-point-details">
-            <span>Latitude: </span>
-            <span th:text="${observationPoint.latitude}"></span>
-            <span>Longitude: </span>
-            <span th:text="${observationPoint.longitude}"></span>
+        <div class="content">
+            <h1 id="observation-point-name" th:text="${observationPoint.name}"></h1>
+            <div id="observation-point-details">
+                <span>Latitude: </span>
+                <span th:text="${observationPoint.latitude}"></span>
+                <span>Longitude: </span>
+                <span th:text="${observationPoint.longitude}"></span>
+            </div>
+
+            <li th:each="observation : ${observationPoint.observations}">
+                <span th:text="${observation.dateTime}"></span>
+                <span th:text="${observation.temperature}"></span>
+            </li>
+
+            <form th:action="@{/observationpoint/{id}(id=${observationPoint.id})}" method="POST">
+                <span>Lämpötila</span><br/>
+                <input type="double" name="temperature"/>
+                <input class="btn btn-default" type="submit" value="Lisää havainto"/>
+            </form>
         </div>
 
-        <li th:each="observation : ${observationPoint.observations}">
-            <span th:text="${observation.dateTime}"></span>
-            <span th:text="${observation.temperature}"></span>
-        </li>
-
-        <form th:action="@{/observationpoint/{id}(id=${observationPoint.id})}" method="POST">
-            <span>Lämpötila</span><br/>
-            <input type="double" name="temperature"/>
-            <input type="submit" value="Lisää havainto"/>
-        </form>
     </body>
 </html>
