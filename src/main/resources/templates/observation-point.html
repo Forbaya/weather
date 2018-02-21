@@ -3,11 +3,18 @@
     <head>
         <meta charset="UTF-8"/>
         <title>Observation point</title>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/observation-point.css}"/>
     </head>
     <body>
         <header th:replace="fragments/header :: header"/>
 
-        <h1 th:text="${observationPoint.name}"></h1>
+        <h1 id="observation-point-name" th:text="${observationPoint.name}"></h1>
+        <div id="observation-point-details">
+            <span>Latitude: </span>
+            <span th:text="${observationPoint.latitude}"></span>
+            <span>Longitude: </span>
+            <span th:text="${observationPoint.longitude}"></span>
+        </div>
 
         <li th:each="observation : ${observationPoint.observations}">
             <span th:text="${observation.dateTime}"></span>
