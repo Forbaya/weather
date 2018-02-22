@@ -11,5 +11,15 @@
 
 .observation-box {
     border: 2px solid green;
+    border-radius: 25px;
     margin-bottom: 10px;
+    background-color: #71dd8a;
+}
+
+.observation-date {
+    margin-left: 10px;
+}
+
+.observation-temperature {
+    margin-left: 30px;
 }

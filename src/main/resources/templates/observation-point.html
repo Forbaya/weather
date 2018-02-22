@@ -21,8 +21,8 @@
 
             <li class="no-bullets" th:each="observation : ${observationPoint.observations}">
                 <div class="observation-box">
-                    <span th:text="${#dates.format(observation.date, 'dd.MM.YYYY HH:mm:ss')}"></span>
-                    <span th:text="${observation.temperature}"></span>
+                    <span class="observation-date" th:text="${#dates.format(observation.date, 'dd.MM.YYYY HH:mm:ss')}"></span>
+                    <span class="observation-temperature" th:text="${observation.temperature}"></span>
                 </div>
             </li>
 
