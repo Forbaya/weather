@@ -14,11 +14,13 @@ public class ObservationPointService {
 
     @Transactional
     public void add(String name, double latitude, double longitude) {
-        ObservationPoint observationPoint = new ObservationPoint();
-        observationPoint.setName(name);
-        observationPoint.setLatitude(latitude);
-        observationPoint.setLongitude(longitude);
+        if (observationPointRepository.findByName(name) == null) {
+            ObservationPoint observationPoint = new ObservationPoint();
+            observationPoint.setName(name);
+            observationPoint.setLatitude(latitude);
+            observationPoint.setLongitude(longitude);
 
-        observationPointRepository.save(observationPoint);
+            observationPointRepository.save(observationPoint);
+        }
     }
 }
