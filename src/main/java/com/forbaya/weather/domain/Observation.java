@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
@@ -17,5 +17,5 @@ public class Observation extends AbstractPersistable<Long> {
     @Column(length = 10000)
     private ObservationPoint observationPoint;
     private double temperature;
-    private LocalDateTime dateTime;
+    private Date date;
 }

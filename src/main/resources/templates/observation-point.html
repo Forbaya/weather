@@ -19,13 +19,15 @@
                 <span th:text="${observationPoint.longitude}"></span>
             </div>
 
-            <li th:each="observation : ${observationPoint.observations}">
-                <span th:text="${observation.dateTime}"></span>
-                <span th:text="${observation.temperature}"></span>
+            <li class="no-bullets" th:each="observation : ${observationPoint.observations}">
+                <div class="observation-box">
+                    <span th:text="${#dates.format(observation.date, 'dd.MM.YYYY HH:mm:ss')}"></span>
+                    <span th:text="${observation.temperature}"></span>
+                </div>
             </li>
 
             <form th:action="@{/observationpoint/{id}(id=${observationPoint.id})}" method="POST">
-                <span>Lämpötila</span><br/>
+                <span>Uusi havainto</span><br/>
                 <input type="double" name="temperature"/>
                 <input class="btn btn-default" type="submit" value="Lisää havainto"/>
             </form>

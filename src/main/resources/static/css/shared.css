@@ -1,9 +1,14 @@
-.content {
-    margin-top: 20px;
-    margin-left: 100px;
-}
-
 #footer {
     background-color: #6c757d;
     color: white;
+}
+
+.content {
+    margin-top: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.no-bullets {
+    list-style-type: none;
 }

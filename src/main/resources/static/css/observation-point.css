@@ -8,3 +8,8 @@
     margin-bottom: 25px;
     color: dimgrey;
 }
+
+.observation-box {
+    border: 2px solid green;
+    margin-bottom: 10px;
+}

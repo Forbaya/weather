@@ -7,7 +7,7 @@ import com.forbaya.weather.repository.ObservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 import javax.transaction.Transactional;
 
 @Service
@@ -22,7 +22,7 @@ public class ObservationService {
         Observation observation = new Observation();
         observation.setObservationPoint(observationPoint);
         observation.setTemperature(temperature);
-        observation.setDateTime(LocalDateTime.now());
+        observation.setDate(new Date());
 
         observationRepository.save(observation);
 
