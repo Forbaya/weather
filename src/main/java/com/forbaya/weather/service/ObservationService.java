@@ -7,7 +7,7 @@ import com.forbaya.weather.repository.ObservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
+import java.util.*;
 import javax.transaction.Transactional;
 
 @Service
@@ -17,6 +17,12 @@ public class ObservationService {
     @Autowired
     private ObservationPointRepository observationPointRepository;
 
+    /**
+     * Adds a new observation to the database.
+     *
+     * @param observationPoint the observation point
+     * @param temperature      the temperature
+     */
     @Transactional
     public void add(ObservationPoint observationPoint, double temperature) {
         Observation observation = new Observation();

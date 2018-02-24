@@ -8,12 +8,18 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface ObservationPointRepository  extends JpaRepository<ObservationPoint, Long> {
     /**
-     * Finds an observation point by city name.
+     * Finds an observation point by name.
      *
      * @param city name of the city
-     * @return the observation point of the city
+     * @return the observation point
      */
     ObservationPoint findByName(String city);
 
+    /**
+     * Finds an observation point by id.
+     *
+     * @param id id of the observation point
+     * @return the observation point
+     */
     ObservationPoint findById(Long id);
 }

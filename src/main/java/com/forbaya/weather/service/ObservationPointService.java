@@ -12,6 +12,13 @@ public class ObservationPointService {
     @Autowired
     private ObservationPointRepository observationPointRepository;
 
+    /**
+     * Adds a new observation point to the database.
+     *
+     * @param name      name of the observation point
+     * @param latitude  the latitude coordinate
+     * @param longitude the longitude coordinate
+     */
     @Transactional
     public void add(String name, double latitude, double longitude) {
         if (observationPointRepository.findByName(name) == null) {
