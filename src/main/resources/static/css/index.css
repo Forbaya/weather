@@ -7,6 +7,7 @@
     width: 200px;
     max-width: 260px;
     text-align: center;
+    padding-bottom: 5px;
 
 }
 
@@ -24,4 +25,8 @@
     margin-top: 20px;
     margin-left: 15%;
     margin-right: 15%;
+}
+
+.current-weather-date {
+    font-size: 15px;
 }

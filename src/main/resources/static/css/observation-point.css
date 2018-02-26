@@ -14,6 +14,7 @@
     border-radius: 25px;
     margin-bottom: 10px;
     background-color: #71dd8a;
+    max-width: 300px;
 }
 
 .observation-date {

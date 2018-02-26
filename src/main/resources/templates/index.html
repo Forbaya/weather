@@ -14,8 +14,10 @@
         <div class="current-weather-container">
             <li class="current-weather no-bullets" th:each="observation : ${currentWeather}">
                 <a class="current-observation-point" th:href="@{/observationpoint/{id}(id=${observation.observationPoint.id})}" th:text="${observation.observationPoint.name}"></a>
-                <p class="current-temperature" th:text="${observation.temperature}"></p>
-                <p class="" th:text="${#dates.format(observation.date, 'HH:mm:ss dd.MM.YYYY')}"></p>
+                <p class="current-temperature">
+                    <span th:text="${observation.temperature}"></span><span class="degree">&deg; C</span>
+                </p>
+                <span class="current-weather-date" th:text="${#dates.format(observation.date, 'HH:mm:ss dd.MM.YYYY')}"></span>
             </li>
         </div>
 
