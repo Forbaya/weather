@@ -7,7 +7,9 @@ import com.forbaya.weather.repository.ObservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import javax.transaction.Transactional;
 
 @Service
@@ -34,5 +36,24 @@ public class ObservationService {
 
         observationPoint.getObservations().add(observation);
         observationPointRepository.save(observationPoint);
+    }
+
+    /**
+     * Get the newest observations for each observation point.
+     *
+     * @return the newest observations
+     */
+    public List<Observation> getCurrentWeather() {
+        List<ObservationPoint> observationPoints = observationPointRepository.findAll();
+        List<Observation> newestObservations = new ArrayList<>();
+
+        for (ObservationPoint op : observationPoints) {
+            Observation newestObservation = observationRepository.findCurrentObservationIn(op.getId());
+            if (newestObservation != null) {
+                newestObservations.add(newestObservation);
+            }
+        }
+
+        return newestObservations;
     }
 }

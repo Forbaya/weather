@@ -1,0 +1,27 @@
+.current-weather {
+    border: 2px solid green;
+    border-radius: 35px;
+    background-color: #71dd8a;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    width: 200px;
+    max-width: 260px;
+    text-align: center;
+
+}
+
+.current-observation-point {
+    font-size: 25px;
+}
+
+.current-temperature {
+    font-size: 25px;
+}
+
+.current-weather-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-left: 15%;
+    margin-right: 15%;
+}

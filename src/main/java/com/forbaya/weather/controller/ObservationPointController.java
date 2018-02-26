@@ -24,7 +24,7 @@ public class ObservationPointController {
     private ObservationService observationService;
 
     /**
-     * Initializes the observation points for h2 database.
+     * Initializes the database with five observation points.
      */
     @PostConstruct
     private void initializeObservationPoints() {
